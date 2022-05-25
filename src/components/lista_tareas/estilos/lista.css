@@ -1,0 +1,4 @@
+.Lista__Text--checked{
+  text-decoration: line-through;
+  color: black;
+}
