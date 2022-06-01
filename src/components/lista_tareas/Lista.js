@@ -7,19 +7,32 @@ import { Eraser } from 'tabler-icons-react';
 import './estilos/lista.css';
 function Lista({tareas, setTareas}){
 
+  // Metodo usado para actualizar las tareas en react y en localstorage
+  const persistirInformacion = (tareas) => {
+    // actualizamos las tareas en react
+    setTareas(tareas);
+    // actualizamos las tareas en localstorage
+    // se crea localstorage por que no existe
+    localStorage.setItem('tareas_v1', JSON.stringify(tareas));
+  }
+
   // Metodo usado para eliminar un elemento del arreglo
   const eliminar = (texto_tarea) => {
-    setTareas(tareas.filter(tarea => tarea.nombre !== texto_tarea));
+    // Metodo usado para actualizar las tareas en react y en localstorage
+    persistirInformacion(tareas.filter(tarea => tarea.nombre !== texto_tarea));
   }
 
   // Metodo usado para cambiar el estado de un elemento del arreglo
   const noOk = (texto_tarea) => {
-    setTareas(tareas.filter(tarea => {
-      if(tarea.nombre === texto_tarea){
-        tarea.estado = tarea.estado ? false : true;
-      }
-      return tarea;
-    }));
+    // Metodo usado para actualizar las tareas en react y en localstorage
+    persistirInformacion(
+      tareas.filter(tarea => {
+        if(tarea.nombre === texto_tarea){
+          tarea.estado = tarea.estado ? false : true;
+        }
+        return tarea;
+      })
+    );
   }
 
   return (

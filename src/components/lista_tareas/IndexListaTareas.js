@@ -18,7 +18,20 @@ let aux_tareas = [
   {nombre: "Bañarse", estado: false}
 ]
 
+// Metodo encargado de revisar si existe localstorage para asignarlo o crearlo
+const validarLocalStorage = () => {
+  if(localStorage.getItem('tareas_v1')){
+    aux_tareas = JSON.parse(localStorage.getItem('tareas_v1'));   
+  }else{
+    // se crea localstorage por que no existe
+    localStorage.setItem('tareas_v1', JSON.stringify(aux_tareas));
+  }
+}
+
 function IndexListaTareas() {
+
+  // Metodo encargado de revisar si existe localstorage para asignarlo o crearlo
+  validarLocalStorage();
 
   // Variables y constantes
   const [tareas, setTareas] = React.useState(aux_tareas);
