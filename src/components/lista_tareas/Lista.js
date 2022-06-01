@@ -5,48 +5,57 @@ import { Eraser } from 'tabler-icons-react';
 // Carga de componentes hijos
 // Carga de otros elementos (CSS, IMAGES)
 import './estilos/lista.css';
-function Lista(){
+function Lista({tareas, setTareas}){
+
+  // Metodo usado para eliminar un elemento del arreglo
+  const eliminar = (texto_tarea) => {
+    setTareas(tareas.filter(tarea => tarea.nombre !== texto_tarea));
+  }
+
+  // Metodo usado para cambiar el estado de un elemento del arreglo
+  const noOk = (texto_tarea) => {
+    setTareas(tareas.filter(tarea => {
+      if(tarea.nombre === texto_tarea){
+        tarea.estado = tarea.estado ? false : true;
+      }
+      return tarea;
+    }));
+  }
+
   return (
     <Grid.Col offset={1} span={10}>
-      <Grid>
-        <Grid.Col span={2}>
-          <Switch
-            onLabel="Ok"
-            offLabel="NO"
-            color="lime"
-            checked={false}
+      {tareas.map((tarea, index) => (
+        <Grid key={`${index}_${tarea.nombre}`}>
+          <Grid.Col span={2}>
+            <Switch
+              onLabel="Ok"
+              offLabel="NO"
+              color="lime"
+              defaultChecked={tarea.estado}
+              onClick={evento => noOk(tarea.nombre)}
+              />
+          </Grid.Col>
+          <Grid.Col span={8}>
+            { !tarea.estado ?
+              (<Text>
+                {tarea.nombre}
+              </Text>)
+            :
+              (<Text>
+                <Mark color="lime" className="Lista__Text--checked">
+                  {tarea.nombre}
+                </Mark>
+              </Text>)
+            }
+          </Grid.Col>
+          <Grid.Col span={2}>
+            <Eraser
+              size={16}
+              onClick={evento => eliminar(tarea.nombre)}
             />
-        </Grid.Col>
-        <Grid.Col span={8}>
-          <Text>
-            Texto 1
-          </Text>
-        </Grid.Col>
-        <Grid.Col span={2}>
-          <Eraser size={16} />
-        </Grid.Col>
-      </Grid>
-
-      <Grid>
-        <Grid.Col span={2}>
-          <Switch
-            onLabel="Ok"
-            offLabel="NO"
-            color="lime"
-            checked={true}
-            />
-        </Grid.Col>
-        <Grid.Col span={8}>
-          <Text>
-            <Mark color="lime" className="Lista__Text--checked">
-              Texto 2
-            </Mark>
-          </Text>
-        </Grid.Col>
-        <Grid.Col span={2}>
-          <Eraser size={16} />
-        </Grid.Col>
-      </Grid>
+          </Grid.Col>
+        </Grid>
+      ))}
     </Grid.Col>
   );
 }

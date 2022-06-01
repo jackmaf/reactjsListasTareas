@@ -14,6 +14,13 @@ https://create-react-app.dev/docs/getting-started/
 ```
 documentacion oficial: 
 https://mantine.dev/getting-started/
+# 4. instalacion de react router dom
+```bash
+  yarn add react-router-dom@6
+```
+
+documentacion oficial: 
+https://reactrouter.com/
 # DOCUMENTACION:
 
 
