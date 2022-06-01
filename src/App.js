@@ -9,6 +9,7 @@ import {
 // Carga de componentes hijos
 import { IndexListaTareas } from './components/lista_tareas/IndexListaTareas';
 import { IndexContacto } from './components/contacto/IndexContacto';
+import { IndexLocalStorage } from './components/localstorage/IndexLocalStorage';
 // Carga de otros elementos (CSS, IMAGES)
 
 function ContactoPrueba(){
@@ -30,10 +31,14 @@ function App() {
         <li>
           <Link to="/contacto">Contacto</Link>
         </li>
+        <li>
+          <Link to="/localstorage">Local Storage</Link>
+        </li>
       </ul>
       <Routes>
         <Route path="/" element={<IndexListaTareas/>}/>
         <Route path="/contacto" element={<ContactoPrueba/>}/>
+        <Route path="/localstorage" element={<IndexLocalStorage/>}/>
       </Routes>
     </BrowserRouter>
   );
