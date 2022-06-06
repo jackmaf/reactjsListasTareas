@@ -2,30 +2,24 @@
 import React from 'react';
 import { Grid, Switch, Text, Mark } from '@mantine/core';
 import { Eraser } from 'tabler-icons-react';
+
 // Carga de componentes hijos
 // Carga de otros elementos (CSS, IMAGES)
 import './estilos/lista.css';
-function Lista({tareas, setTareas}){
-
-  // Metodo usado para actualizar las tareas en react y en localstorage
-  const persistirInformacion = (tareas) => {
-    // actualizamos las tareas en react
-    setTareas(tareas);
-    // actualizamos las tareas en localstorage
-    // se crea localstorage por que no existe
-    localStorage.setItem('tareas_v1', JSON.stringify(tareas));
-  }
+function Lista({tareas, guardarTareas, loading, error}){
 
   // Metodo usado para eliminar un elemento del arreglo
   const eliminar = (texto_tarea) => {
-    // Metodo usado para actualizar las tareas en react y en localstorage
-    persistirInformacion(tareas.filter(tarea => tarea.nombre !== texto_tarea));
+    // metodo usado para actualizar informacion en el item es el segundo
+    // parametros enviado por el custom hook
+    guardarTareas(tareas.filter(tarea => tarea.nombre !== texto_tarea));
   }
 
   // Metodo usado para cambiar el estado de un elemento del arreglo
   const noOk = (texto_tarea) => {
-    // Metodo usado para actualizar las tareas en react y en localstorage
-    persistirInformacion(
+    // metodo usado para actualizar informacion en el item es el segundo
+    // parametros enviado por el custom hook
+    guardarTareas(
       tareas.filter(tarea => {
         if(tarea.nombre === texto_tarea){
           tarea.estado = tarea.estado ? false : true;
