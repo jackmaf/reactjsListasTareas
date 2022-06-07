@@ -11,6 +11,7 @@ import { IndexListaTareas } from './components/lista_tareas/IndexListaTareas';
 import { IndexContacto } from './components/contacto/IndexContacto';
 import { IndexLocalStorage } from './components/localstorage/IndexLocalStorage';
 import { IndexBisabueloSinContexto } from './components/sin_contextos_react/IndexBisabueloSinContexto';
+import { IndexBisabueloConContexto } from './components/con_contextos_react/IndexBisabueloConContexto';
 // Carga de otros elementos (CSS, IMAGES)
 
 function ContactoPrueba(){
@@ -36,10 +37,10 @@ function App() {
           <Link to="/localstorage">2. Local Storage</Link>
         </li>
         <li>
-          <Link to="/sin-contextos">3. Sin Contextos</Link>
+          <Link to="/sin-contextos">3. SIN Contextos</Link>
         </li>
         <li>
-          <Link to="/con-contextos">3. Con Contextos</Link>
+          <Link to="/con-contextos">3. CON Contextos</Link>
         </li>
       </ul>
       <Routes>
@@ -47,6 +48,7 @@ function App() {
         <Route path="/contacto" element={<ContactoPrueba/>}/>
         <Route path="/localstorage" element={<IndexLocalStorage/>}/>
         <Route path="/sin-contextos" element={<IndexBisabueloSinContexto/>}/>
+        <Route path="/con-contextos" element={<IndexBisabueloConContexto/>}/>
       </Routes>
     </BrowserRouter>
   );
