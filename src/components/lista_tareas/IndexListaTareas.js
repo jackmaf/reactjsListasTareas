@@ -9,7 +9,7 @@ import { Buscador } from './Buscador';
 import Lista from './Lista';
 // Carga de otros elementos (CSS, IMAGES)
 
-let aux_tareas = [
+/*let aux_tareas = [
   {nombre: "Meditar", estado: true},
   {nombre: "Desayunar", estado: true},
   {nombre: "Tender la cama", estado: false},
@@ -18,7 +18,7 @@ let aux_tareas = [
   {nombre: "ALmorzar", estado: false},
   {nombre: "Hacer Ejercicio", estado: false},
   {nombre: "Bañarse", estado: false}
-]
+]*/
 
 // Custom Hook que usaremos para crear en localstorage la informacion y
 // en react con sus hooks nativos
@@ -88,7 +88,6 @@ function IndexListaTareas() {
           loading,
           error,
   } = useLocalStorage("tareas_v1", []);
-
   //} = useLocalStorage("tareas_v1", aux_tareas);
 
   // Variables y constantes
