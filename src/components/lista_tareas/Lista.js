@@ -6,7 +6,7 @@ import { Eraser } from 'tabler-icons-react';
 // Carga de componentes hijos
 // Carga de otros elementos (CSS, IMAGES)
 import './estilos/lista.css';
-function Lista({tareas, guardarTareas, loading, error}){
+function Lista({tareas, guardarTareas}){
 
   // Metodo usado para eliminar un elemento del arreglo
   const eliminar = (texto_tarea) => {

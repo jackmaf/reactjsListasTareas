@@ -83,8 +83,6 @@ function IndexListaTareas() {
               <Lista
                 tareas={filtradasTareas}
                 guardarTareas={guardarTareas}
-                loading={loading}
-                error={error}
               />
             </Grid>
           </>)
