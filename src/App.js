@@ -11,14 +11,14 @@ import { IndexListaTareas } from './components/lista_tareas/IndexListaTareas';
 import { IndexContacto } from './components/contacto/IndexContacto';
 import { IndexLocalStorage } from './components/localstorage/IndexLocalStorage';
 import { IndexBisabueloSinContexto } from './components/sin_contextos_react/IndexBisabueloSinContexto';
-import { IndexBisabueloConContexto } from './components/con_contextos_react/IndexBisabueloConContexto';
+import IndexFamilia from './components/con_contextos_react/IndexFamilia';
 // Carga de otros elementos (CSS, IMAGES)
 
 function ContactoPrueba(){
   return (
     <div>
       <h1>Entraste al contacto</h1>
-      <IndexContacto/>      
+      <IndexContacto/>
     </div>
   );
 }
@@ -48,7 +48,7 @@ function App() {
         <Route path="/contacto" element={<ContactoPrueba/>}/>
         <Route path="/localstorage" element={<IndexLocalStorage/>}/>
         <Route path="/sin-contextos" element={<IndexBisabueloSinContexto/>}/>
-        <Route path="/con-contextos" element={<IndexBisabueloConContexto/>}/>
+        <Route path="/con-contextos" element={<IndexFamilia/>}/>
       </Routes>
     </BrowserRouter>
   );

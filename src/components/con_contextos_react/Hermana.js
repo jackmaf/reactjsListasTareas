@@ -1,11 +1,16 @@
 // Cargas de librerias
-import React from 'react';
+import React, {useContext} from 'react';
+
+// Carga de contextos
+import { FamiliaContexto } from './context/ProviderGeneral';
 
 // Carga de componentes hijos
 
 // Carga de otros elementos (CSS, IMAGES)
 
-function Hermana({bisabuelo, abuelo, padre, hermana, hermano}){
+const Hermana = () => {
+  // DATOS tomados del contexto
+  const {bisabuelo, abuelo, padre, hermana, hermano, setHermana} = useContext(FamiliaContexto);
   return (
     <>
       <h1>Hermana</h1>

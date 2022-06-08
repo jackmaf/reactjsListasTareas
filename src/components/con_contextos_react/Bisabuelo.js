@@ -1,19 +1,18 @@
 // Cargas de librerias
-import React from 'react';
+import React, {useContext} from 'react';
+
+// Carga de contextos
+import { FamiliaContexto } from './context/ProviderGeneral';
 
 // Carga de componentes hijos
 import { Abuelo } from './Abuelo';
 
 // Carga de otros elementos (CSS, IMAGES)
 
-// DATOS
-const bisabuelo = "Max";
-const abuelo = "Neils";
-const padre = "Morton";
-const hermana = "Ikora";
-const hermano = "Uldren";
+function Bisabuelo(){
+  // DATOS tomados del contexto
+  const { bisabuelo, abuelo, padre, hermana, hermano, setBisabuelo } = useContext(FamiliaContexto);
 
-function IndexBisabueloConContexto(){
   return (
     <>
       <h1>Documentación:</h1>
@@ -37,29 +36,25 @@ function IndexBisabueloConContexto(){
         height="315"
         src="https://www.youtube.com/embed/0RYui50muvI?start=467"
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen></iframe>
-      <hr/>
-      <h1>Bisabuelo</h1>
-      <p>se tiene los nombres de la familia: </p>
-      <ol>
-        <ul>Bisabuelo: {bisabuelo}</ul>
-        <ul>Abuelo: {abuelo}</ul>
-        <ul>Padre: {padre}</ul>
-        <ul>Hermana: {hermana}</ul>
-        <ul>Hermano: {hermano}</ul>
-      </ol>
-      <hr/>
-      <Abuelo
-        bisabuelo={bisabuelo}
-        abuelo={abuelo}
-        padre={padre}
-        hermana={hermana}
-        hermano={hermano}
-      />
+
+        <hr/>
+        <h1>Bisabuelo</h1>
+        <p>se tiene los nombres de la familia: </p>
+        <ol>
+          <ul>Bisabuelo: {bisabuelo}</ul>
+          <ul>Abuelo: {abuelo}</ul>
+          <ul>Padre: {padre}</ul>
+          <ul>Hermana: {hermana}</ul>
+          <ul>Hermano: {hermano}</ul>
+        </ol>
+        <hr/>
+        <Abuelo/>
+
     </>
   );
 }
 
-export { IndexBisabueloConContexto };
+export { Bisabuelo };
