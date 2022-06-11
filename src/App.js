@@ -12,6 +12,7 @@ import { IndexContacto } from './components/contacto/IndexContacto';
 import { IndexLocalStorage } from './components/localstorage/IndexLocalStorage';
 import { IndexBisabueloSinContexto } from './components/sin_contextos_react/IndexBisabueloSinContexto';
 import IndexFamilia from './components/con_contextos_react/IndexFamilia';
+import { GithubPages } from './components/githubpages';
 // Carga de otros elementos (CSS, IMAGES)
 
 function ContactoPrueba(){
@@ -42,6 +43,9 @@ function App() {
         <li>
           <Link to="/con-contextos">3. CON Contextos</Link>
         </li>
+        <li>
+          <Link to="/subir-a-github-pages">4. Subir a Github Pages</Link>
+        </li>
       </ul>
       <Routes>
         <Route path="/" element={<IndexListaTareas/>}/>
@@ -49,6 +53,7 @@ function App() {
         <Route path="/localstorage" element={<IndexLocalStorage/>}/>
         <Route path="/sin-contextos" element={<IndexBisabueloSinContexto/>}/>
         <Route path="/con-contextos" element={<IndexFamilia/>}/>
+        <Route path="/subir-a-github-pages" element={<GithubPages/>}/>
       </Routes>
     </BrowserRouter>
   );
