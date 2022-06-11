@@ -7,6 +7,7 @@ import { AlertCircle } from 'tabler-icons-react';
 import { Titulo } from './Titulo';
 import { Buscador } from './Buscador';
 import Lista from './Lista';
+import { Modal } from './Modal';
 
 // Custom Hooks
 import { useLocalStorage } from './custom_hooks/UseLocalStorage';
@@ -88,6 +89,9 @@ function IndexListaTareas() {
           </>)
         }
       </Grid.Col>
+      <Modal>
+        <p>crear un nuevo post de modal</p>
+      </Modal>
     </Grid>
   );
 }
