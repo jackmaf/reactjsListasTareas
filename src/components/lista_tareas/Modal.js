@@ -1,21 +1,25 @@
 // Cargas de librerias
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Modal } from '@mantine/core';
 
 // Carga de componentes hijos
 
 // Custom Hooks
 
 // Carga de otros elementos (CSS, IMAGES)
-import './estilos/modal.css';
 
-function Modal({ children }) {
+function ModalDemo({ children, openedModal, setOpenedModal, title}) {
   return ReactDOM.createPortal(
-    <div className="Modal">
-      {children}
-    </div>,
+    <Modal
+      centered
+      opened={openedModal}
+      onClose={() => setOpenedModal(false)}
+      title={title}>
+        {children}
+    </Modal>,
     document.getElementById('modal-crear-tareas')
   );
 }
 
-export { Modal };
+export { ModalDemo };

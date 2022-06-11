@@ -1,5 +1,5 @@
 // Cargas de librerias
-import React from 'react';
+import { useState } from 'react';
 import { Grid, Alert } from '@mantine/core';
 import { AlertCircle } from 'tabler-icons-react';
 
@@ -7,7 +7,7 @@ import { AlertCircle } from 'tabler-icons-react';
 import { Titulo } from './Titulo';
 import { Buscador } from './Buscador';
 import Lista from './Lista';
-import { Modal } from './Modal';
+import { ModalDemo } from './Modal';
 
 // Custom Hooks
 import { useLocalStorage } from './custom_hooks/UseLocalStorage';
@@ -36,7 +36,8 @@ function IndexListaTareas() {
   //} = useLocalStorage("tareas_v1", aux_tareas);
 
   // Variables y constantes
-  const [letrasBuscadas, setLetrasBuscadas] = React.useState('');
+  const [letrasBuscadas, setLetrasBuscadas] = useState('');
+  const [openedModal, setOpenedModal] = useState(false);
   let filtradasTareas =[];
 
   // predicado o condicion
@@ -89,9 +90,16 @@ function IndexListaTareas() {
           </>)
         }
       </Grid.Col>
-      <Modal>
+      <div
+        className="Lista__ButtonPlus"
+        onClick={() => setOpenedModal(true)}>
+      </div>
+      <ModalDemo
+        title='Crear Tarea'
+        openedModal={openedModal}
+        setOpenedModal={setOpenedModal}>
         <p>crear un nuevo post de modal</p>
-      </Modal>
+      </ModalDemo>
     </Grid>
   );
 }
