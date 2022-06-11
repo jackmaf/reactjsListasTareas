@@ -40,7 +40,7 @@ function GithubPages(){
       <p> el comando anterior lo que hace es correr generar la carpeta build hermana o al mismo nivel de public, src y node_modules</p>
       <h3>5. se sube a github (git push origin master)</h3>
       <h3>6. ir al repositorio de github</h3>
-      <p>estando en el repositorio remoto github vamos a Settings->Pages y deberia aparecer algo como: </p>
+      <p>estando en el repositorio remoto github vamos a Settings-&gt;Pages y deberia aparecer algo como: </p>
       <code> Your site is published at https://jackmaf.github.io/reactjsListasTareas/</code>
       <h3>7. LO LOGRASTE YA TIENES TU APP DE REACT PUBLICADA EN GITHUB PAGES :D</h3>
     </>
