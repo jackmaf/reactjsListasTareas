@@ -2,58 +2,57 @@
 import React from 'react';
 import {
   BrowserRouter,
-  Routes,
-  Route,
-  Link
+  Routes, Route
 } from "react-router-dom";
 // Carga de componentes hijos
 import { IndexListaTareas } from './components/lista_tareas/IndexListaTareas';
-import { IndexContacto } from './components/contacto/IndexContacto';
+import { IndexRRouterDom } from './components/react_router_dom/IndexRRouterDom';
+import { RRDParams } from './components/react_router_dom/RRDParams';
+import { RRDInternalHola, RRDInternalChao } from './components/react_router_dom/RRDInternalRoutes';
 import { IndexLocalStorage } from './components/localstorage/IndexLocalStorage';
 import { IndexBisabueloSinContexto } from './components/sin_contextos_react/IndexBisabueloSinContexto';
 import IndexFamilia from './components/con_contextos_react/IndexFamilia';
 import { GithubPages } from './components/githubpages';
-// Carga de otros elementos (CSS, IMAGES)
+import { ContainerComposicion } from './components/con_composicion/IndexContainerComposicion';
+import IndexComposicionBisabuelo from './components/con_composicion/familia/IndexBisabuelo';
+import Menu from './components/menu/IndexMenu';
 
-function ContactoPrueba(){
+// Carga de otros elementos (CSS, IMAGES)
+import './App.css'
+
+function PruebaFuncion(){
   return (
     <div>
       <h1>Entraste al contacto</h1>
-      <IndexContacto/>
+      <IndexRRouterDom/>
     </div>
   );
+}
+
+const NoFoundPage = () => {
+  return (<h1>Pagina no encontrada X-X</h1>);
 }
 
 function App() {
   return (
     <BrowserRouter>
-      <ul>
-        <li>
-          <Link to="/">0. Lista de tareas</Link>
-        </li>
-        <li>
-          <Link to="/contacto">1. Contacto</Link>
-        </li>
-        <li>
-          <Link to="/localstorage">2. Local Storage</Link>
-        </li>
-        <li>
-          <Link to="/sin-contextos">3. SIN Contextos</Link>
-        </li>
-        <li>
-          <Link to="/con-contextos">3. CON Contextos</Link>
-        </li>
-        <li>
-          <Link to="/subir-a-github-pages">4. Subir a Github Pages</Link>
-        </li>
-      </ul>
-      <Routes>
+    <Menu/>
+    <Routes>
         <Route path="/" element={<IndexListaTareas/>}/>
-        <Route path="/contacto" element={<ContactoPrueba/>}/>
+        <Route path="/react-router-dom/*" element={<PruebaFuncion/>}>
+          <Route path="hola" element={<RRDInternalHola/>}/>
+          <Route path="chao" element={<RRDInternalChao/>}/>
+        </Route>
+        <Route path="/react-router-dom-params/:params_id_jack" element={<RRDParams/>}/>
         <Route path="/localstorage" element={<IndexLocalStorage/>}/>
         <Route path="/sin-contextos" element={<IndexBisabueloSinContexto/>}/>
         <Route path="/con-contextos" element={<IndexFamilia/>}/>
         <Route path="/subir-a-github-pages" element={<GithubPages/>}/>
+        <Route path="/con-composicion/*" element={<ContainerComposicion/>}>
+          <Route path="familia" element={<IndexComposicionBisabuelo/>}/>
+          {/* <Route path="lista-tareas" element={<RRDInternalChao/>}/> */}
+        </Route>
+        <Route path="*" element={<NoFoundPage/>}/>
       </Routes>
     </BrowserRouter>
   );

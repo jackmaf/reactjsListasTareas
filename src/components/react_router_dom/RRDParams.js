@@ -1,0 +1,31 @@
+// Cargas de librerias
+import React from 'react';
+import { useParams, useNavigate } from "react-router-dom";
+
+// Carga de componentes hijos
+
+// Carga de otros elementos (CSS, IMAGES)
+
+function RRDParams(){
+
+  const navigate = useNavigate();
+  const { params_id_jack } = useParams();
+
+  const cargarListaTarea = () => {
+    navigate('/');
+  }
+
+  return(
+  <>
+    <h1>el parametro tomado de la url es: {params_id_jack}</h1>
+    <hr/>
+    <p>pondremos un boton para cambiarnos desde una funciona a cualquier url:</p>
+    <button onClick={() => cargarListaTarea()}>IR A Lista de tareas con useNavigate</button>
+    <br/>
+    <button onClick={() => navigate('/react-router-dom')}>IR A react router dom</button>
+    <br/>
+    <button onClick={() => navigate('/localstorage')}>IR A Local storage</button>
+  </>);
+}
+
+export { RRDParams };
