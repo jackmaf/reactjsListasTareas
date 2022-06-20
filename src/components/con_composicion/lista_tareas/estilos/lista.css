@@ -1,0 +1,51 @@
+.Lista__Text--checked{
+  text-decoration: line-through;
+  color: black;
+}
+
+
+.Lista__ButtonPlus {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #095776;
+
+  /* Mittig */
+  top: 80%;
+  left: 40%;
+}
+
+.Lista__ButtonPlus:after {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  width: 50%;
+  background: #095776;
+  top: 50%;
+  left: 50%;
+}
+
+.Lista__ButtonPlus:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #095776;
+  height: 50%;
+  width: 4px;
+}
+
+.Lista__ButtonPlus:hover:before,
+.Lista__ButtonPlus:hover:after {
+  background: #fff;
+  transition: 0.2s;
+}
+
+.Lista__ButtonPlus:hover {
+  background-color: #095776;
+  transition: 0.2s;
+}

@@ -15,6 +15,7 @@ import IndexFamilia from './components/con_contextos_react/IndexFamilia';
 import { GithubPages } from './components/githubpages';
 import { ContainerComposicion } from './components/con_composicion/IndexContainerComposicion';
 import IndexComposicionBisabuelo from './components/con_composicion/familia/IndexBisabuelo';
+import IndexComposicionListaTareas from './components/con_composicion/lista_tareas/IndexListaTareas';
 import Menu from './components/menu/IndexMenu';
 
 // Carga de otros elementos (CSS, IMAGES)
@@ -50,7 +51,7 @@ function App() {
         <Route path="/subir-a-github-pages" element={<GithubPages/>}/>
         <Route path="/con-composicion/*" element={<ContainerComposicion/>}>
           <Route path="familia" element={<IndexComposicionBisabuelo/>}/>
-          {/* <Route path="lista-tareas" element={<RRDInternalChao/>}/> */}
+          <Route path="lista-tareas" element={<IndexComposicionListaTareas/>}/>
         </Route>
         <Route path="*" element={<NoFoundPage/>}/>
       </Routes>
