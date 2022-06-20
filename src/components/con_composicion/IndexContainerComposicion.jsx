@@ -2,14 +2,13 @@
 import React from 'react';
 import {
   Link,
-  Outlet
-} from "react-router-dom";
+  Outlet,
+} from 'react-router-dom';
 // Carga de componentes hijos
 
 // Carga de otros elementos (CSS, IMAGES)
 
 function ContainerComposicion() {
-
   return (
     <>
       <h1>Con Composición Ejemplos</h1>
@@ -21,9 +20,10 @@ function ContainerComposicion() {
           <Link to="/con-composicion/lista-tareas">3. Lista Tareas</Link>
         </li>
       </ul>
-      <Outlet/>
+      <Outlet />
     </>
   );
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export { ContainerComposicion };
