@@ -44,7 +44,7 @@ function App() {
           <Route path="hola" element={<RRDInternalHola />} />
           <Route path="chao" element={<RRDInternalChao />} />
         </Route>
-        <Route path="/react-router-dom-params/:params_id_jack" element={<RRDParams />} />
+        <Route path="/react-router-dom-params/:paramsIdJack" element={<RRDParams />} />
         <Route path="/localstorage" element={<IndexLocalStorage />} />
         <Route path="/sin-contextos" element={<IndexBisabueloSinContexto />} />
         <Route path="/con-contextos" element={<IndexFamilia />} />
