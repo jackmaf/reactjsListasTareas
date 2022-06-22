@@ -16,6 +16,9 @@ import { GithubPages } from './components/githubpages';
 import { ContainerComposicion } from './components/con_composicion/IndexContainerComposicion';
 import IndexComposicionBisabuelo from './components/con_composicion/familia/IndexBisabuelo';
 import IndexComposicionListaTareas from './components/con_composicion/lista_tareas/IndexListaTareas';
+import { IndexRenderProps } from './components/con_composicion/render_props/IndexRenderProps';
+import { Variables } from './components/con_composicion/render_props/Variables';
+import { Funciones } from './components/con_composicion/render_props/Funciones';
 import Menu from './components/menu/IndexMenu';
 import { Otros } from './components/otros/Index';
 
@@ -52,6 +55,10 @@ function App() {
         <Route path="/con-composicion/*" element={<ContainerComposicion />}>
           <Route path="familia" element={<IndexComposicionBisabuelo />} />
           <Route path="lista-tareas" element={<IndexComposicionListaTareas />} />
+          <Route path="index-render-props/*" element={<IndexRenderProps />}>
+            <Route path="variables" element={<Variables />} />
+            <Route path="funciones" element={<Funciones />} />
+          </Route>
         </Route>
         <Route path="/otros" element={<Otros />} />
         <Route path="*" element={<NoFoundPage />} />

@@ -17,7 +17,10 @@ function ContainerComposicion() {
           <Link to="/con-composicion/familia">1. Ejemplo Familia</Link>
         </li>
         <li>
-          <Link to="/con-composicion/lista-tareas">3. Lista Tareas</Link>
+          <Link to="/con-composicion/lista-tareas">2. Lista Tareas</Link>
+        </li>
+        <li>
+          <Link to="/con-composicion/index-render-props">3. Render Props</Link>
         </li>
       </ul>
       <Outlet />

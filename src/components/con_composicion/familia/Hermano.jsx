@@ -1,11 +1,10 @@
 // Cargas de librerias
 import React from 'react';
 
-// Carga de componentes hijos
-
 // Carga de otros elementos (CSS, IMAGES)
 
-function Hermano({ children }){
+// eslint-disable-next-line react/prop-types
+function Hermano({ children }) {
   return (
     <>
       { children }
@@ -14,4 +13,5 @@ function Hermano({ children }){
   );
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export { Hermano };
