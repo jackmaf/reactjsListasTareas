@@ -1,3 +1,6 @@
+/* eslint-disable semi */
+/* eslint-disable arrow-body-style */
+/* eslint-disable react/function-component-definition */
 // Cargas de librerias
 import React from 'react';
 
@@ -5,7 +8,7 @@ import React from 'react';
 
 // Carga de otros elementos (CSS, IMAGES)
 
-function RRDInternalHola(){
+function RRDInternalHola() {
   return (<p>Cargando Solo Hola por Subruta HOLA</p>);
 }
 

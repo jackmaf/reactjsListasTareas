@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/prefer-default-export */
 // Cargas de librerias
 import React from 'react';
 
@@ -29,11 +31,11 @@ export const useLocalStorage = (itemName, initialValue) => {
           parsedItem = JSON.parse(localStorageItem);
         }
 
-        // se pone en vairables de react 
+        // se pone en vairables de react
         setItem(parsedItem);
         setLoading(false);
-      } catch(error) {
-        setError(error);
+      } catch (auxError) {
+        setError(auxError);
       }
     }, 3000);
   });
@@ -44,8 +46,8 @@ export const useLocalStorage = (itemName, initialValue) => {
       const stringifiedItem = JSON.stringify(newItem);
       localStorage.setItem(itemName, stringifiedItem);
       setItem(newItem);
-    } catch(error) {
-      setError(error);
+    } catch (auxError) {
+      setError(auxError);
     }
   };
 
@@ -56,6 +58,6 @@ export const useLocalStorage = (itemName, initialValue) => {
     loading,
     error,
   };
-}
+};
 
-//export { useLocalStorage };
+// export { useLocalStorage };

@@ -1,3 +1,11 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
 // Cargas de librerias
 import { useState } from 'react';
 import { Grid, Alert } from '@mantine/core';
@@ -14,7 +22,7 @@ import { useLocalStorage } from './custom_hooks/UseLocalStorage';
 
 // Carga de otros elementos (CSS, IMAGES)
 
-/*let aux_tareas = [
+/* let aux_tareas = [
   {nombre: "Meditar", estado: true},
   {nombre: "Desayunar", estado: true},
   {nombre: "Tender la cama", estado: false},
@@ -23,35 +31,35 @@ import { useLocalStorage } from './custom_hooks/UseLocalStorage';
   {nombre: "ALmorzar", estado: false},
   {nombre: "Hacer Ejercicio", estado: false},
   {nombre: "Bañarse", estado: false}
-]*/
+] */
 function IndexListaTareas() {
-
   // Custom Hook que usaremos para crear en localstorage la informacion y
   // en react con sus hooks nativos
-  const { item: tareas,
-          saveItem: guardarTareas,
-          loading,
-          error,
-  } = useLocalStorage("tareas_v1", []);
-  //} = useLocalStorage("tareas_v1", aux_tareas);
+  const {
+    item: tareas,
+    saveItem: guardarTareas,
+    loading,
+    error,
+  } = useLocalStorage('tareas_v1', []);
+  // } = useLocalStorage("tareas_v1", aux_tareas);
 
   // Variables y constantes
   const [letrasBuscadas, setLetrasBuscadas] = useState('');
   const [openedModal, setOpenedModal] = useState(false);
-  let filtradasTareas =[];
+  let filtradasTareas = [];
 
   // predicado o condicion
-  const completados = tarea => tarea.estado;
+  const completados = (tarea) => tarea.estado;
   // array de tareas completadas
   let tareasCompletadas = tareas.filter(completados).length;
 
-  if(letrasBuscadas.length > 0){
+  if (letrasBuscadas.length > 0) {
     // se recorre cada tarea
-    filtradasTareas = tareas.filter(tarea => tarea.nombre.toUpperCase().includes(letrasBuscadas.toUpperCase()));
+    filtradasTareas = tareas.filter((tarea) => tarea.nombre.toUpperCase().includes(letrasBuscadas.toUpperCase()));
     // array de tareas completadas
     tareasCompletadas = filtradasTareas.filter(completados).length;
-  }else{
-    filtradasTareas = tareas
+  } else {
+    filtradasTareas = tareas;
   }
 
   return (
@@ -62,18 +70,17 @@ function IndexListaTareas() {
           total={filtradasTareas.length}
         />
 
-        { loading
-        ? <Alert
-            icon={<AlertCircle size={16} />}
-            title="Información"
-            color="orange"
-            radius="xl"
-            withCloseButton
-            variant="filled">
-              Estamos Cargando la información....
-          </Alert>
-        :
-          (<>
+        { loading ? <Alert
+          icon={<AlertCircle size={16} />}
+          title="Información"
+          color="orange"
+          radius="xl"
+          withCloseButton
+          variant="filled"
+        >
+          Estamos Cargando la información....
+        </Alert>
+          : (<>
             <Grid>
               <Grid.Col offset={1} span={10}>
                 <Buscador
@@ -87,17 +94,17 @@ function IndexListaTareas() {
                 guardarTareas={guardarTareas}
               />
             </Grid>
-          </>)
-        }
+          </>)}
       </Grid.Col>
       <div
         className="Lista__ButtonPlus"
-        onClick={() => setOpenedModal(true)}>
-      </div>
+        onClick={() => setOpenedModal(true)}
+      />
       <ModalDemo
-        title='Crear Tarea'
+        title="Crear Tarea"
         openedModal={openedModal}
-        setOpenedModal={setOpenedModal}>
+        setOpenedModal={setOpenedModal}
+      >
         <p>crear un nuevo post de modal</p>
       </ModalDemo>
     </Grid>

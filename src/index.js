@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './App';
@@ -8,7 +10,7 @@ root.render(
   // eslint-disable-next-line react/jsx-filename-extension
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
   // eslint-disable-next-line react/jsx-filename-extension
 );
 

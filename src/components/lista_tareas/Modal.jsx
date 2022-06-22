@@ -1,3 +1,6 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable no-undef */
+/* eslint-disable comma-dangle */
 // Cargas de librerias
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -9,14 +12,17 @@ import { Modal } from '@mantine/core';
 
 // Carga de otros elementos (CSS, IMAGES)
 
-function ModalDemo({ children, openedModal, setOpenedModal, title}) {
+function ModalDemo({
+  children, openedModal, setOpenedModal, title
+}) {
   return ReactDOM.createPortal(
     <Modal
       centered
       opened={openedModal}
       onClose={() => setOpenedModal(false)}
-      title={title}>
-        {children}
+      title={title}
+    >
+      {children}
     </Modal>,
     document.getElementById('modal-crear-tareas')
   );
