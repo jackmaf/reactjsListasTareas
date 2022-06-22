@@ -1,33 +1,39 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-unneeded-ternary */
+/* eslint-disable react/prop-types */
 // Cargas de librerias
 import React from 'react';
-import { Grid, Switch, Text, Mark } from '@mantine/core';
+import {
+  Grid, Switch, Text, Mark,
+} from '@mantine/core';
 import { Eraser } from 'tabler-icons-react';
 
 // Carga de componentes hijos
 // Carga de otros elementos (CSS, IMAGES)
 import './estilos/lista.css';
-function Lista({tareas, guardarTareas}){
 
+function Lista({ tareas, guardarTareas }) {
   // Metodo usado para eliminar un elemento del arreglo
-  const eliminar = (texto_tarea) => {
+  const eliminar = (textoTarea) => {
     // metodo usado para actualizar informacion en el item es el segundo
     // parametros enviado por el custom hook
-    guardarTareas(tareas.filter(tarea => tarea.nombre !== texto_tarea));
-  }
+    guardarTareas(tareas.filter((tarea) => tarea.nombre !== textoTarea));
+  };
 
   // Metodo usado para cambiar el estado de un elemento del arreglo
-  const noOk = (texto_tarea) => {
+  const noOk = (textoTarea) => {
     // metodo usado para actualizar informacion en el item es el segundo
     // parametros enviado por el custom hook
     guardarTareas(
-      tareas.filter(tarea => {
-        if(tarea.nombre === texto_tarea){
+      tareas.filter((tarea) => {
+        if (tarea.nombre === textoTarea) {
           tarea.estado = tarea.estado ? false : true;
         }
         return tarea;
-      })
+      }),
     );
-  }
+  };
 
   return (
     <Grid.Col offset={1} span={10}>
@@ -39,26 +45,24 @@ function Lista({tareas, guardarTareas}){
               offLabel="NO"
               color="lime"
               defaultChecked={tarea.estado}
-              onClick={evento => noOk(tarea.nombre)}
-              />
+              onClick={() => noOk(tarea.nombre)}
+            />
           </Grid.Col>
           <Grid.Col span={8}>
-            { !tarea.estado ?
-              (<Text>
-                {tarea.nombre}
-              </Text>)
-            :
-              (<Text>
-                <Mark color="lime" className="Lista__Text--checked">
-                  {tarea.nombre}
-                </Mark>
-              </Text>)
-            }
+            { !tarea.estado
+              ? (<Text>{tarea.nombre}</Text>)
+              : (
+                <Text>
+                  <Mark color="lime" className="Lista__Text--checked">
+                    {tarea.nombre}
+                  </Mark>
+                </Text>
+              )}
           </Grid.Col>
           <Grid.Col span={2}>
             <Eraser
               size={16}
-              onClick={evento => eliminar(tarea.nombre)}
+              onClick={() => eliminar(tarea.nombre)}
             />
           </Grid.Col>
         </Grid>
