@@ -82,6 +82,14 @@ function IndexMenu() {
               6. Extensiones otros...
             </NavLink>
           </li>
+          <li className="Menu__li">
+            <NavLink
+              to="/usestate"
+              className={({ isActive }) => (isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link')}
+            >
+              7. Hook useState
+            </NavLink>
+          </li>
         </ul>
       </div>
     </>

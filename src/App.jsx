@@ -21,6 +21,7 @@ import { Variables } from './components/con_composicion/render_props/Variables';
 import { Funciones } from './components/con_composicion/render_props/Funciones';
 import Menu from './components/menu/IndexMenu';
 import { Otros } from './components/otros/Index';
+import UseState from './components/use_state/UseState';
 
 // Carga de otros elementos (CSS, IMAGES)
 import './App.css';
@@ -61,6 +62,7 @@ function App() {
           </Route>
         </Route>
         <Route path="/otros" element={<Otros />} />
+        <Route path="/usestate" element={<UseState />} />
         <Route path="*" element={<NoFoundPage />} />
       </Routes>
     </BrowserRouter>
