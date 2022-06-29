@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 // Cargas de librerias
 import { useState, useEffect } from 'react';
 // import React from 'react';
@@ -12,6 +11,7 @@ const valorInicial = 'Valor inicial pedro';
 
 function UseState() {
   const [nombre, setNombre] = useState(valorInicial);
+  // const a = 12;
 
   const handleInicial = () => setNombre(valorInicial);
 
