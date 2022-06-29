@@ -90,6 +90,14 @@ function IndexMenu() {
               7. Hook useState
             </NavLink>
           </li>
+          <li className="Menu__li">
+            <NavLink
+              to="/useeffect"
+              className={({ isActive }) => (isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link')}
+            >
+              8. Hook useEffect
+            </NavLink>
+          </li>
         </ul>
       </div>
     </>
