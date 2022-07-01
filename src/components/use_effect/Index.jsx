@@ -27,10 +27,10 @@ function UseState() {
   // cambios en alguna variable de useState
   // });
   // se  ejecuta una sola vez cuando se pinta el render solo al principio
-  // }, []);
+  }, []);
   // se ejecuta al principio de pintar el render y ademas solo cuando el estado
   // nombre cambie o se llame el setNombre
-  }, [nombre]);
+  // }, [nombre]);
   return (
     <>
       <p>Ver codigo fuente para entenderlo mejor</p>

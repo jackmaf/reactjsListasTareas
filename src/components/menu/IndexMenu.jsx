@@ -98,6 +98,14 @@ function IndexMenu() {
               8. Hook useEffect
             </NavLink>
           </li>
+          <li className="Menu__li">
+            <NavLink
+              to="/estados-compuestos"
+              className={({ isActive }) => (isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link')}
+            >
+              9. Estados Compuestos
+            </NavLink>
+          </li>
         </ul>
       </div>
     </>
