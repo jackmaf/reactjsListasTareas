@@ -24,6 +24,7 @@ import { Otros } from './components/otros/Index';
 import UseState from './components/use_state/UseState';
 import UseEffect from './components/use_effect/Index';
 import EstadosCompuestos from './components/estados_compuestos/Index';
+import EstadosCompuestosConUseReduce from './components/use_reduce/Index';
 
 // Carga de otros elementos (CSS, IMAGES)
 import './App.css';
@@ -67,6 +68,7 @@ function App() {
         <Route path="/usestate" element={<UseState />} />
         <Route path="/useeffect" element={<UseEffect />} />
         <Route path="/estados-compuestos" element={<EstadosCompuestos />} />
+        <Route path="/estados-compuestos-con-use-reduce" element={<EstadosCompuestosConUseReduce />} />
         <Route path="*" element={<NoFoundPage />} />
       </Routes>
     </BrowserRouter>

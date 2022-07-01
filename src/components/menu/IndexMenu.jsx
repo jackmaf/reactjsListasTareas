@@ -106,6 +106,14 @@ function IndexMenu() {
               9. Estados Compuestos
             </NavLink>
           </li>
+          <li className="Menu__li">
+            <NavLink
+              to="/estados-compuestos-con-use-reduce"
+              className={({ isActive }) => (isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link')}
+            >
+              10. Estados Compuestos con Reducer y useReduce
+            </NavLink>
+          </li>
         </ul>
       </div>
     </>
