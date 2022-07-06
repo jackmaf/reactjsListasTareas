@@ -13,9 +13,8 @@ import { FamiliaContexto } from './context/ProviderGeneral';
 
 function Hermano() {
   // DATOS tomados del contexto
-  const {
-    bisabuelo, abuelo, padre, hermana, hermano, setHermano
-  } = useContext(FamiliaContexto);
+  const { bisabuelo, abuelo, padre, hermana, hermano, setHermano } =
+    useContext(FamiliaContexto);
   return (
     <>
       <h1>Hermano</h1>

@@ -1,7 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 // Cargas de librerias
-import React from 'react';
+
 // Carga de componentes hijos
 
 // Carga de otros elementos (CSS, IMAGES)
@@ -12,9 +10,9 @@ function Variables() {
       <h3>Render Props con variables</h3>
       <p>
         Revisa el codigo interno de este jsx
-        (/components/con_composicion/render_props/Variables)
-        en el cual veras el componente Bisabuelo que dentro de el
-        se enviara el atributo (listaFamilia) que es un componente (ListaOrdenadaFamilia)
+        (/components/con_composicion/render_props/Variables) en el cual veras el
+        componente Bisabuelo que dentro de el se enviara el atributo
+        (listaFamilia) que es un componente (ListaOrdenadaFamilia)
       </p>
       <br />
       <Bisabuelo />
@@ -24,7 +22,11 @@ function Variables() {
 
 function ListaOrdenadaFamilia({
   // eslint-disable-next-line react/prop-types
-  bisabuelo, abuelo, padre, hermana, hermano,
+  bisabuelo,
+  abuelo,
+  padre,
+  hermana,
+  hermano
 }) {
   return (
     <ol>
@@ -75,7 +77,7 @@ function Bisabuelo() {
       <Abuelo
         // eslint-disable-next-line max-len
         // eslint-disable-next-line react/no-unstable-nested-components
-        listaFamilia={(
+        listaFamilia={
           <ListaOrdenadaFamilia
             bisabuelo={bisabuelo}
             abuelo={abuelo}
@@ -83,13 +85,13 @@ function Bisabuelo() {
             hermana={hermana}
             hermano={hermano}
           />
-        )}
+        }
       >
         <hr />
         <Padre
           // eslint-disable-next-line max-len
           // eslint-disable-next-line react/no-unstable-nested-components
-          listaFamilia={(
+          listaFamilia={
             <ListaOrdenadaFamilia
               bisabuelo={bisabuelo}
               abuelo={abuelo}
@@ -97,7 +99,7 @@ function Bisabuelo() {
               hermana={hermana}
               hermano={hermano}
             />
-          )}
+          }
         />
       </Abuelo>
     </>
@@ -110,8 +112,8 @@ function Abuelo({ children, listaFamilia }) {
     <>
       <h1>Abuelo</h1>
       <p>se tiene los nombres de la familia: </p>
-      { listaFamilia }
-      { children }
+      {listaFamilia}
+      {children}
       <br />
     </>
   );
@@ -122,18 +124,18 @@ function Padre(props) {
     <>
       <h1>Padre</h1>
       <p>se tiene los nombres de la familia: </p>
-      { props.listaFamilia }
+      {props.listaFamilia}
       <hr />
       <Hermana>
         <h1>Hermana</h1>
         <p>se tiene los nombres de la familia: </p>
-        { props.listaFamilia }
+        {props.listaFamilia}
       </Hermana>
       <hr />
       <Hermano>
         <h1>Hermano</h1>
         <p>se tiene los nombres de la familia: </p>
-        { props.listaFamilia }
+        {props.listaFamilia}
       </Hermano>
     </>
   );
@@ -143,7 +145,7 @@ function Padre(props) {
 function Hermana({ children }) {
   return (
     <>
-      { children }
+      {children}
       <p>estamos en el componente hermana =D</p>
     </>
   );
@@ -153,7 +155,7 @@ function Hermana({ children }) {
 function Hermano({ children }) {
   return (
     <>
-      { children }
+      {children}
       <p>estamos en el componente hermano =D</p>
     </>
   );

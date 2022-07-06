@@ -23,10 +23,10 @@ function UseState() {
     // toma la inicializacion como un cambio
     // eslint-disable-next-line no-console
     console.log('🚀 ~ file: Index.jsx ~ line 23 ~ UseState ~ nombre', nombre);
-  // si no se manda segundo parametro se ejecuta despues de pintar el render y al haber
-  // cambios en alguna variable de useState
-  // });
-  // se  ejecuta una sola vez cuando se pinta el render solo al principio
+    // si no se manda segundo parametro se ejecuta despues de pintar el render y al haber
+    // cambios en alguna variable de useState
+    // });
+    // se  ejecuta una sola vez cuando se pinta el render solo al principio
   }, []);
   // se ejecuta al principio de pintar el render y ademas solo cuando el estado
   // nombre cambie o se llame el setNombre
@@ -38,22 +38,13 @@ function UseState() {
         Valor variable nombre actual:
         {` ${nombre}`}
       </p>
-      <button
-        type="button"
-        onClick={() => setNombre('jack')}
-      >
+      <button type='button' onClick={() => setNombre('jack')}>
         Dar valor de jack
       </button>
-      <button
-        type="button"
-        onClick={() => setNombre('dani')}
-      >
+      <button type='button' onClick={() => setNombre('dani')}>
         Dar valor de dani
       </button>
-      <button
-        type="button"
-        onClick={handleInicial}
-      >
+      <button type='button' onClick={handleInicial}>
         Dar valor de inicial
       </button>
     </>

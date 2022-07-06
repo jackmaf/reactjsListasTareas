@@ -10,28 +10,31 @@ import { useState } from 'react';
 const valorInicial = {
   loading: false,
   error: false,
-  value: '',
+  value: ''
 };
 
 function EstadosCompuestos() {
   const [estado, setEstado] = useState(valorInicial);
 
-  const handleError = () => setEstado({
-    loading: false,
-    error: true,
-    value: '',
-  });
+  const handleError = () =>
+    setEstado({
+      loading: false,
+      error: true,
+      value: ''
+    });
 
-  const handleLoading = () => setEstado({
-    loading: true,
-    error: false,
-    value: '',
-  });
+  const handleLoading = () =>
+    setEstado({
+      loading: true,
+      error: false,
+      value: ''
+    });
 
-  const handleValue = (auxValue) => setEstado({
-    ...valorInicial, // Spread Operator
-    value: auxValue,
-  });
+  const handleValue = (auxValue) =>
+    setEstado({
+      ...valorInicial, // Spread Operator
+      value: auxValue
+    });
 
   return (
     <>
@@ -51,30 +54,20 @@ function EstadosCompuestos() {
           {estado.value === '' ? ' VACIO' : ` ${estado.value}`}
         </li>
       </ol>
-      <button
-        type="button"
-        onClick={handleError}
-      >
+      <button type='button' onClick={handleError}>
         Dar Error
       </button>
-      <button
-        type="button"
-        onClick={handleLoading}
-      >
+      <button type='button' onClick={handleLoading}>
         Dar Loading
       </button>
-      <button
-        type="button"
-        onClick={() => handleValue('hola')}
-      >
+      <button type='button' onClick={() => handleValue('hola')}>
         Dar valor hola
       </button>
-      {estado.loading && !estado.error
-      && (<h1>Cargandoo....</h1>)}
-      {!estado.loading && estado.error
-      && (<h1>ERROR</h1>)}
-      {!estado.loading && !estado.error && estado.value !== ''
-      && (<h1>{estado.value}</h1>)}
+      {estado.loading && !estado.error && <h1>Cargandoo....</h1>}
+      {!estado.loading && estado.error && <h1>ERROR</h1>}
+      {!estado.loading && !estado.error && estado.value !== '' && (
+        <h1>{estado.value}</h1>
+      )}
     </>
   );
 }

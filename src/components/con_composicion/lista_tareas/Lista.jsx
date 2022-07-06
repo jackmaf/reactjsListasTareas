@@ -1,5 +1,4 @@
 // Cargas de librerias
-import React from 'react';
 import { Grid, Switch, Text, Mark } from '@mantine/core';
 import { Eraser } from 'tabler-icons-react';
 
@@ -22,7 +21,7 @@ function Lista({ tareas, guardarTareas }) {
     guardarTareas(
       tareas.filter((tarea) => {
         if (tarea.nombre === textoTarea) {
-          tarea.estado = tarea.estado ? false : true;
+          tarea.estado = !tarea.estado;
         }
         return tarea;
       })

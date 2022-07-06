@@ -1,9 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable comma-dangle */
-/* eslint-disable object-property-newline */
-/* eslint-disable react/jsx-no-constructed-context-values */
 // Cargas de librerias
+// eslint-disable-next-line no-unused-vars
 import React, { useState, createContext } from 'react';
 
 // Genera, crea o inicializa el contexto donde existiran los datos
@@ -21,11 +17,19 @@ function ProviderGeneral(props) {
   return (
     <FamiliaContexto.Provider
       value={{
-        bisabuelo, abuelo, padre, hermana, hermano,
-        setBisabuelo, setAbuelo, setPadre, setHermana, setHermano
+        bisabuelo,
+        abuelo,
+        padre,
+        hermana,
+        hermano,
+        setBisabuelo,
+        setAbuelo,
+        setPadre,
+        setHermana,
+        setHermano
       }}
     >
-      { props.children }
+      {props.children}
     </FamiliaContexto.Provider>
   );
 }

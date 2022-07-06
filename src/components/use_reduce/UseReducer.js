@@ -8,7 +8,7 @@
 const initialState = {
   loading: false,
   error: false,
-  value: '',
+  value: ''
 };
 
 // 1. FORMA MAS BASICA SEGUNDA MAS USADA
@@ -17,24 +17,26 @@ export const reducerBasic = (state, action) => {
     return {
       ...state, // Spread Operator
       error: true,
-      loading: false,
+      loading: false
     };
-  } if (action.type === 'LOADING') {
+  }
+  if (action.type === 'LOADING') {
     return {
       ...state, // Spread Operator
       loading: true,
-      error: false,
+      error: false
     };
-  } if (action.type === 'WRITE') {
+  }
+  if (action.type === 'WRITE') {
     return {
       ...state, // Spread Operator
       loading: false,
       error: false,
-      value: action.payload,
+      value: action.payload
     };
   } else {
     return {
-      ...state, // Spread Operator
+      ...state // Spread Operator
     };
   }
 };
@@ -45,45 +47,45 @@ export const reducerSwitch = (state, action) => {
       return {
         ...state, // Spread Operator
         error: true,
-        loading: false,
+        loading: false
       };
     case 'LOADING':
       return {
         ...state, // Spread Operator
         loading: true,
-        error: false,
+        error: false
       };
     case 'WRITE':
       return {
         ...state, // Spread Operator
         loading: false,
         error: false,
-        value: action.payload,
+        value: action.payload
       };
     default:
       return {
-        ...initialState, // Spread Operator
+        ...initialState // Spread Operator
       };
   }
 };
 // 3. FORMA ELEGANTE PERO MENOS USADA (RECOMENDADA)
 const reducerObject = (state, payload) => ({
-  'ERROR': {
+  ERROR: {
     ...state, // Spread Operator
     error: true,
-    loading: false,
+    loading: false
   },
-  'LOADING': {
+  LOADING: {
     ...state, // Spread Operator
     loading: true,
-    error: false,
+    error: false
   },
-  'WRITE': {
+  WRITE: {
     ...state, // Spread Operator
     loading: false,
     error: false,
-    value: payload,
-  },
+    value: payload
+  }
 });
 
 export const reducer = (state, action) => {

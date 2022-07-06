@@ -1,6 +1,4 @@
-/* eslint-disable import/prefer-default-export */
 // Cargas de librerias
-import React from 'react';
 
 // Carga de componentes hijos
 import { Abuelo } from './Abuelo';

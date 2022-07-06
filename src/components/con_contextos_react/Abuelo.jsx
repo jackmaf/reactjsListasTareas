@@ -16,9 +16,8 @@ import { Padre } from './Padre';
 const Abuelo = () => {
   // DATOS tomados del contexto
   // eslint-disable-next-line no-unused-vars
-  const {
-    bisabuelo, abuelo, padre, hermana, hermano, setAbuelo
-  } = useContext(FamiliaContexto);
+  const { bisabuelo, abuelo, padre, hermana, hermano, setAbuelo } =
+    useContext(FamiliaContexto);
 
   return (
     <>

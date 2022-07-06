@@ -20,22 +20,13 @@ function UseState() {
         Valor variable nombre actual:
         {` ${nombre}`}
       </p>
-      <button
-        type="button"
-        onClick={() => setNombre('jack')}
-      >
+      <button type='button' onClick={() => setNombre('jack')}>
         Dar valor de jack
       </button>
-      <button
-        type="button"
-        onClick={() => setNombre('dani')}
-      >
+      <button type='button' onClick={() => setNombre('dani')}>
         Dar valor de dani
       </button>
-      <button
-        type="button"
-        onClick={handleInicial}
-      >
+      <button type='button' onClick={handleInicial}>
         Dar valor de inicial
       </button>
     </>

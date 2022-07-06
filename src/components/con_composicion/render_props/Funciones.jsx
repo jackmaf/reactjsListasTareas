@@ -1,7 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 // Cargas de librerias
-import React from 'react';
+
 // Carga de componentes hijos
 
 // Carga de otros elementos (CSS, IMAGES)
@@ -12,10 +10,10 @@ function Funciones() {
       <h3>Render Props con funciones</h3>
       <p>
         Revisa el codigo interno de este jsx
-        (/components/con_composicion/render_props/Funciones)
-        en el cual veras el componente Bisabuelo que dentro de el
-        se enviara el atributo (listaFamilia) que es una funcion que
-        contiene otro componente que se reutilizara (ListaOrdenadaFamilia)
+        (/components/con_composicion/render_props/Funciones) en el cual veras el
+        componente Bisabuelo que dentro de el se enviara el atributo
+        (listaFamilia) que es una funcion que contiene otro componente que se
+        reutilizara (ListaOrdenadaFamilia)
       </p>
       <br />
       <Bisabuelo />
@@ -25,7 +23,11 @@ function Funciones() {
 
 function ListaOrdenadaFamilia({
   // eslint-disable-next-line react/prop-types
-  bisabuelo, abuelo, padre, hermana, hermano,
+  bisabuelo,
+  abuelo,
+  padre,
+  hermana,
+  hermano
 }) {
   return (
     <ol>
@@ -111,8 +113,8 @@ function Abuelo({ children, listaFamilia }) {
     <>
       <h1>Abuelo</h1>
       <p>se tiene los nombres de la familia: </p>
-      { listaFamilia() }
-      { children }
+      {listaFamilia()}
+      {children}
       <br />
     </>
   );
@@ -123,18 +125,18 @@ function Padre(props) {
     <>
       <h1>Padre</h1>
       <p>se tiene los nombres de la familia: </p>
-      { props.listaFamilia() }
+      {props.listaFamilia()}
       <hr />
       <Hermana>
         <h1>Hermana</h1>
         <p>se tiene los nombres de la familia: </p>
-        { props.listaFamilia() }
+        {props.listaFamilia()}
       </Hermana>
       <hr />
       <Hermano>
         <h1>Hermano</h1>
         <p>se tiene los nombres de la familia: </p>
-        { props.listaFamilia() }
+        {props.listaFamilia()}
       </Hermano>
     </>
   );
@@ -144,7 +146,7 @@ function Padre(props) {
 function Hermana({ children }) {
   return (
     <>
-      { children }
+      {children}
       <p>estamos en el componente hermana =D</p>
     </>
   );
@@ -154,7 +156,7 @@ function Hermana({ children }) {
 function Hermano({ children }) {
   return (
     <>
-      { children }
+      {children}
       <p>estamos en el componente hermano =D</p>
     </>
   );

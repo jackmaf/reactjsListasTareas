@@ -12,7 +12,7 @@ import { reducerBasic, reducerSwitch, reducer } from './UseReducer';
 const valorInicial = {
   loading: false,
   error: false,
-  value: '',
+  value: ''
 };
 
 function EstadosCompuestosConUseReduce() {
@@ -25,10 +25,11 @@ function EstadosCompuestosConUseReduce() {
 
   const handleError = () => dispatch({ type: 'ERROR' });
   const handleLoading = () => dispatch({ type: 'LOADING' });
-  const handleValue = (auxValue) => dispatch({
-    type: 'WRITE',
-    payload: auxValue,
-  });
+  const handleValue = (auxValue) =>
+    dispatch({
+      type: 'WRITE',
+      payload: auxValue
+    });
 
   return (
     <>
@@ -48,30 +49,20 @@ function EstadosCompuestosConUseReduce() {
           {estado.value === '' ? ' VACIO' : ` ${estado.value}`}
         </li>
       </ol>
-      <button
-        type="button"
-        onClick={handleError}
-      >
+      <button type='button' onClick={handleError}>
         Dar Error
       </button>
-      <button
-        type="button"
-        onClick={handleLoading}
-      >
+      <button type='button' onClick={handleLoading}>
         Dar Loading
       </button>
-      <button
-        type="button"
-        onClick={() => handleValue('hola')}
-      >
+      <button type='button' onClick={() => handleValue('hola')}>
         Dar valor hola
       </button>
-      {estado.loading && !estado.error
-      && (<h1>Cargandoo....</h1>)}
-      {!estado.loading && estado.error
-      && (<h1>ERROR</h1>)}
-      {!estado.loading && !estado.error && estado.value !== ''
-      && (<h1>{estado.value}</h1>)}
+      {estado.loading && !estado.error && <h1>Cargandoo....</h1>}
+      {!estado.loading && estado.error && <h1>ERROR</h1>}
+      {!estado.loading && !estado.error && estado.value !== '' && (
+        <h1>{estado.value}</h1>
+      )}
     </>
   );
 }

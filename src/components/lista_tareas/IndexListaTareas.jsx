@@ -1,10 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/jsx-closing-tag-location */
-/* eslint-disable react/jsx-wrap-multilines */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 // Cargas de librerias
 import { useState } from 'react';
@@ -39,7 +32,7 @@ function IndexListaTareas() {
     item: tareas,
     saveItem: guardarTareas,
     loading,
-    error,
+    error
   } = useLocalStorage('tareas_v1', []);
   // } = useLocalStorage("tareas_v1", aux_tareas);
 
@@ -55,7 +48,9 @@ function IndexListaTareas() {
 
   if (letrasBuscadas.length > 0) {
     // se recorre cada tarea
-    filtradasTareas = tareas.filter((tarea) => tarea.nombre.toUpperCase().includes(letrasBuscadas.toUpperCase()));
+    filtradasTareas = tareas.filter((tarea) =>
+      tarea.nombre.toUpperCase().includes(letrasBuscadas.toUpperCase())
+    );
     // array de tareas completadas
     tareasCompletadas = filtradasTareas.filter(completados).length;
   } else {
@@ -70,38 +65,33 @@ function IndexListaTareas() {
           total={filtradasTareas.length}
         />
 
-        { loading ? <Alert
-          icon={<AlertCircle size={16} />}
-          title="Información"
-          color="orange"
-          radius="xl"
-          withCloseButton
-          variant="filled"
-        >
-          Estamos Cargando la información....
-        </Alert>
-          : (<>
+        {loading ? (
+          <Alert
+            icon={<AlertCircle size={16} />}
+            title='Información'
+            color='orange'
+            radius='xl'
+            withCloseButton
+            variant='filled'
+          >
+            Estamos Cargando la información....
+          </Alert>
+        ) : (
+          <>
             <Grid>
               <Grid.Col offset={1} span={10}>
-                <Buscador
-                  setLetrasBuscadas={setLetrasBuscadas}
-                />
+                <Buscador setLetrasBuscadas={setLetrasBuscadas} />
               </Grid.Col>
             </Grid>
             <Grid>
-              <Lista
-                tareas={filtradasTareas}
-                guardarTareas={guardarTareas}
-              />
+              <Lista tareas={filtradasTareas} guardarTareas={guardarTareas} />
             </Grid>
-          </>)}
+          </>
+        )}
       </Grid.Col>
-      <div
-        className="Lista__ButtonPlus"
-        onClick={() => setOpenedModal(true)}
-      />
+      <div className='Lista__ButtonPlus' onClick={() => setOpenedModal(true)} />
       <ModalDemo
-        title="Crear Tarea"
+        title='Crear Tarea'
         openedModal={openedModal}
         setOpenedModal={setOpenedModal}
       >

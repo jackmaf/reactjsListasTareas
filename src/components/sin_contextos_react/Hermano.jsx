@@ -1,17 +1,11 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable comma-dangle */
-/* eslint-disable react/prop-types */
 // Cargas de librerias
-import React from 'react';
 
 // Carga de componentes hijos
 
 // Carga de otros elementos (CSS, IMAGES)
 
 // eslint-disable-next-line react/prop-types
-function Hermano({
-  bisabuelo, abuelo, padre, hermana, hermano
-}) {
+function Hermano({ bisabuelo, abuelo, padre, hermana, hermano }) {
   return (
     <>
       <h1>Hermano</h1>

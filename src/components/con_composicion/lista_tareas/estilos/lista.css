@@ -1,8 +1,7 @@
-.Lista__Text--checked{
+.Lista__Text--checked {
   text-decoration: line-through;
   color: black;
 }
-
 
 .Lista__ButtonPlus {
   position: absolute;

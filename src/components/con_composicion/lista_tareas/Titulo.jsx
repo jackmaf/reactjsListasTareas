@@ -1,11 +1,5 @@
 // Cargas de librerias
-import React from 'react';
-import {
-  Grid,
-  Center,
-  Avatar,
-  AvatarsGroup,
-} from '@mantine/core';
+import { Grid, Center, Avatar, AvatarsGroup } from '@mantine/core';
 // Carga de componentes hijos
 // Carga de otros elementos (CSS, IMAGES)
 import './estilos/titulo.css';
@@ -15,13 +9,17 @@ import imgPato from './imagenes/patito.jpeg';
 // eslint-disable-next-line react/prop-types
 function Titulo({ children }) {
   return (
-    <Grid className="Titulo__Grid">
+    <Grid className='Titulo__Grid'>
       <Grid.Col offset={1} span={10}>
         <Center>
-          <AvatarsGroup limit={2} total={7} size="xl">
-            <Avatar src={imgGato} component="a" href="https://github.com/rtivital" />
+          <AvatarsGroup limit={2} total={7} size='xl'>
+            <Avatar
+              src={imgGato}
+              component='a'
+              href='https://github.com/rtivital'
+            />
             <Avatar src={imgPato} />
-            <Avatar src="avatar.png" />
+            <Avatar src='avatar.png' />
             {/* ...other items */}
           </AvatarsGroup>
         </Center>
