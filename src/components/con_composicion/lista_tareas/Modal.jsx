@@ -1,6 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable comma-dangle */
-/* eslint-disable no-undef */
 // Cargas de librerias
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -12,9 +9,7 @@ import { Modal } from '@mantine/core';
 
 // Carga de otros elementos (CSS, IMAGES)
 
-function ModalDemo({
-  children, openedModal, setOpenedModal, title,
-}) {
+function ModalDemo({ children, openedModal, setOpenedModal, title }) {
   return ReactDOM.createPortal(
     <Modal
       centered

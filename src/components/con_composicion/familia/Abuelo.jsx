@@ -1,5 +1,4 @@
 // Cargas de librerias
-import React from 'react';
 
 // Carga de otros elementos (CSS, IMAGES)
 
@@ -7,7 +6,7 @@ import React from 'react';
 function Abuelo({ children }) {
   return (
     <>
-      { children }
+      {children}
       <br />
     </>
   );

@@ -1,14 +1,13 @@
 // Cargas de librerias
-import React from 'react';
-import {
-  BrowserRouter,
-  Routes, Route,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // Carga de componentes hijos
 import { IndexListaTareas } from './components/lista_tareas/IndexListaTareas';
 import { IndexRRouterDom } from './components/react_router_dom/IndexRRouterDom';
 import { RRDParams } from './components/react_router_dom/RRDParams';
-import { RRDInternalHola, RRDInternalChao } from './components/react_router_dom/RRDInternalRoutes';
+import {
+  RRDInternalHola,
+  RRDInternalChao
+} from './components/react_router_dom/RRDInternalRoutes';
 import { IndexLocalStorage } from './components/localstorage/IndexLocalStorage';
 import { IndexBisabueloSinContexto } from './components/sin_contextos_react/IndexBisabueloSinContexto';
 import IndexFamilia from './components/con_contextos_react/IndexFamilia';
@@ -39,37 +38,46 @@ function PruebaFuncion() {
 }
 
 // eslint-disable-next-line react/function-component-definition
-const NoFoundPage = () => (<h1>Pagina no encontrada X-X</h1>);
+const NoFoundPage = () => <h1>Pagina no encontrada X-X</h1>;
 
 function App() {
   return (
     <BrowserRouter>
       <Menu />
       <Routes>
-        <Route path="/" element={<IndexListaTareas />} />
-        <Route path="/react-router-dom/*" element={<PruebaFuncion />}>
-          <Route path="hola" element={<RRDInternalHola />} />
-          <Route path="chao" element={<RRDInternalChao />} />
+        <Route path='/' element={<IndexListaTareas />} />
+        <Route path='/react-router-dom/*' element={<PruebaFuncion />}>
+          <Route path='hola' element={<RRDInternalHola />} />
+          <Route path='chao' element={<RRDInternalChao />} />
         </Route>
-        <Route path="/react-router-dom-params/:paramsIdJack" element={<RRDParams />} />
-        <Route path="/localstorage" element={<IndexLocalStorage />} />
-        <Route path="/sin-contextos" element={<IndexBisabueloSinContexto />} />
-        <Route path="/con-contextos" element={<IndexFamilia />} />
-        <Route path="/subir-a-github-pages" element={<GithubPages />} />
-        <Route path="/con-composicion/*" element={<ContainerComposicion />}>
-          <Route path="familia" element={<IndexComposicionBisabuelo />} />
-          <Route path="lista-tareas" element={<IndexComposicionListaTareas />} />
-          <Route path="index-render-props/*" element={<IndexRenderProps />}>
-            <Route path="variables" element={<Variables />} />
-            <Route path="funciones" element={<Funciones />} />
+        <Route
+          path='/react-router-dom-params/:paramsIdJack'
+          element={<RRDParams />}
+        />
+        <Route path='/localstorage' element={<IndexLocalStorage />} />
+        <Route path='/sin-contextos' element={<IndexBisabueloSinContexto />} />
+        <Route path='/con-contextos' element={<IndexFamilia />} />
+        <Route path='/subir-a-github-pages' element={<GithubPages />} />
+        <Route path='/con-composicion/*' element={<ContainerComposicion />}>
+          <Route path='familia' element={<IndexComposicionBisabuelo />} />
+          <Route
+            path='lista-tareas'
+            element={<IndexComposicionListaTareas />}
+          />
+          <Route path='index-render-props/*' element={<IndexRenderProps />}>
+            <Route path='variables' element={<Variables />} />
+            <Route path='funciones' element={<Funciones />} />
           </Route>
         </Route>
-        <Route path="/otros" element={<Otros />} />
-        <Route path="/usestate" element={<UseState />} />
-        <Route path="/useeffect" element={<UseEffect />} />
-        <Route path="/estados-compuestos" element={<EstadosCompuestos />} />
-        <Route path="/estados-compuestos-con-use-reduce" element={<EstadosCompuestosConUseReduce />} />
-        <Route path="*" element={<NoFoundPage />} />
+        <Route path='/otros' element={<Otros />} />
+        <Route path='/usestate' element={<UseState />} />
+        <Route path='/useeffect' element={<UseEffect />} />
+        <Route path='/estados-compuestos' element={<EstadosCompuestos />} />
+        <Route
+          path='/estados-compuestos-con-use-reduce'
+          element={<EstadosCompuestosConUseReduce />}
+        />
+        <Route path='*' element={<NoFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

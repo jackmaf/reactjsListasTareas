@@ -1,11 +1,18 @@
 {
-    "env": {
-        "browser": false,
+  "env": {
+        "browser": true,
         "es2021": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "plugin:react/jsx-runtime",
+        "standard",
+        "eslint-config-prettier"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -18,8 +25,6 @@
         "react"
     ],
     "rules": {
-        "quotes": ["error", "single"],
-        "react/react-in-jsx-scope": ["off"],
-        "no-unused-vars": ["error"]
+        "react/prop-types": "off"
     }
 }

@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable import/prefer-default-export */
 // Cargas de librerias
 import React from 'react';
 
@@ -56,7 +54,7 @@ export const useLocalStorage = (itemName, initialValue) => {
     item,
     saveItem,
     loading,
-    error,
+    error
   };
 };
 

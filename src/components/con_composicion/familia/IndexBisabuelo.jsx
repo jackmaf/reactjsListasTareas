@@ -1,5 +1,4 @@
 // Cargas de librerias
-import React from 'react';
 
 // Carga de componentes hijos
 import { Abuelo } from './Abuelo';

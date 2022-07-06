@@ -1,5 +1,4 @@
 // Cargas de librerias
-import React from 'react';
 
 // Carga de componentes hijos
 import { Hermana } from './Hermana';
@@ -7,10 +6,7 @@ import { Hermano } from './Hermano';
 
 // Carga de otros elementos (CSS, IMAGES)
 
-function Padre({
-  // eslint-disable-next-line react/prop-types
-  bisabuelo, abuelo, padre, hermana, hermano,
-}) {
+function Padre({ bisabuelo, abuelo, padre, hermana, hermano }) {
   return (
     <>
       <h1>Padre</h1>
@@ -95,5 +91,4 @@ function Padre({
   );
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export { Padre };

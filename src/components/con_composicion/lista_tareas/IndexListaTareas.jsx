@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/react-in-jsx-scope */
 // Cargas de librerias
 import { useState } from 'react';
 import { Grid, Alert, Input } from '@mantine/core';

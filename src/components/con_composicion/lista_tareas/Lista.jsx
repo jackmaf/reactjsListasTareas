@@ -1,12 +1,6 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-unneeded-ternary */
-/* eslint-disable react/prop-types */
 // Cargas de librerias
 import React from 'react';
-import {
-  Grid, Switch, Text, Mark,
-} from '@mantine/core';
+import { Grid, Switch, Text, Mark } from '@mantine/core';
 import { Eraser } from 'tabler-icons-react';
 
 // Carga de componentes hijos
@@ -31,7 +25,7 @@ function Lista({ tareas, guardarTareas }) {
           tarea.estado = tarea.estado ? false : true;
         }
         return tarea;
-      }),
+      })
     );
   };
 
@@ -41,29 +35,26 @@ function Lista({ tareas, guardarTareas }) {
         <Grid key={`${index}_${tarea.nombre}`}>
           <Grid.Col span={2}>
             <Switch
-              onLabel="Ok"
-              offLabel="NO"
-              color="lime"
+              onLabel='Ok'
+              offLabel='NO'
+              color='lime'
               defaultChecked={tarea.estado}
               onClick={() => noOk(tarea.nombre)}
             />
           </Grid.Col>
           <Grid.Col span={8}>
-            { !tarea.estado
-              ? (<Text>{tarea.nombre}</Text>)
-              : (
-                <Text>
-                  <Mark color="lime" className="Lista__Text--checked">
-                    {tarea.nombre}
-                  </Mark>
-                </Text>
-              )}
+            {!tarea.estado ? (
+              <Text>{tarea.nombre}</Text>
+            ) : (
+              <Text>
+                <Mark color='lime' className='Lista__Text--checked'>
+                  {tarea.nombre}
+                </Mark>
+              </Text>
+            )}
           </Grid.Col>
           <Grid.Col span={2}>
-            <Eraser
-              size={16}
-              onClick={() => eliminar(tarea.nombre)}
-            />
+            <Eraser size={16} onClick={() => eliminar(tarea.nombre)} />
           </Grid.Col>
         </Grid>
       ))}
