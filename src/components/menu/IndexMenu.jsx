@@ -100,22 +100,12 @@ function IndexMenu() {
           </li>
           <li className='Menu__li'>
             <NavLink
-              to='/otros'
-              className={({ isActive }) =>
-                isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'
-              }
-            >
-              6. Extensiones otros...
-            </NavLink>
-          </li>
-          <li className='Menu__li'>
-            <NavLink
               to='/usestate'
               className={({ isActive }) =>
                 isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'
               }
             >
-              7. Hook useState
+              6. Hook useState
             </NavLink>
           </li>
           <li className='Menu__li'>
@@ -125,7 +115,7 @@ function IndexMenu() {
                 isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'
               }
             >
-              8. Hook useEffect
+              7. Hook useEffect
             </NavLink>
           </li>
           <li className='Menu__li'>
@@ -135,7 +125,7 @@ function IndexMenu() {
                 isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'
               }
             >
-              9. Estados Compuestos
+              8. Estados Compuestos
             </NavLink>
           </li>
           <li className='Menu__li'>
@@ -145,7 +135,27 @@ function IndexMenu() {
                 isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'
               }
             >
-              10. Estados Compuestos con Reducer y useReduce
+              9. Estados Compuestos con Reducer y useReduce
+            </NavLink>
+          </li>
+          <li className='Menu__li'>
+            <NavLink
+              to='/env-cmd'
+              className={({ isActive }) =>
+                isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'
+              }
+            >
+              10. Variables de entorno con env-cmd
+            </NavLink>
+          </li>
+          <li className='Menu__li'>
+            <NavLink
+              to='/otros'
+              className={({ isActive }) =>
+                isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'
+              }
+            >
+              xxx. Extensiones otros...
             </NavLink>
           </li>
         </ul>

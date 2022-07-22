@@ -20,6 +20,7 @@ import { Variables } from './components/con_composicion/render_props/Variables';
 import { Funciones } from './components/con_composicion/render_props/Funciones';
 import Menu from './components/menu/IndexMenu';
 import { Otros } from './components/otros/Index';
+import { VariablesEntorno } from './components/variables_entorno/Index';
 import UseState from './components/use_state/UseState';
 import UseEffect from './components/use_effect/Index';
 import EstadosCompuestos from './components/estados_compuestos/Index';
@@ -77,6 +78,7 @@ function App() {
           path='/estados-compuestos-con-use-reduce'
           element={<EstadosCompuestosConUseReduce />}
         />
+        <Route path='/env-cmd' element={<VariablesEntorno />} />
         <Route path='*' element={<NoFoundPage />} />
       </Routes>
     </BrowserRouter>

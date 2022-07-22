@@ -24,6 +24,16 @@ function Otros() {
       <iframe
         width='560'
         height='315'
+        src='https://www.youtube.com/embed/3BHXuZvI4FI'
+        title='YouTube video player'
+        frameBorder='0'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+        allowFullScreen
+      />
+      <br />
+      <iframe
+        width='560'
+        height='315'
         src='https://www.youtube.com/embed/vYR2G3zoJhM'
         title='YouTube video player'
         frameBorder='0'
@@ -60,15 +70,9 @@ function Otros() {
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
       />
-      <iframe
-        width='560'
-        height='315'
-        src='https://www.youtube.com/embed/3BHXuZvI4FI'
-        title='YouTube video player'
-        frameBorder='0'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        allowFullScreen
-      />
+      <a href='https://platzi.com/blog/los-mejores-15-plugins-de-vscode-para-frontend/'>
+        Los mejores 15 plugins de VSCode para frontend
+      </a>
     </>
   );
 }
