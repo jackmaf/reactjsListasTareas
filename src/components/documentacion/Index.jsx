@@ -186,6 +186,16 @@ function Documentacion() {
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
       ></iframe>
+      <br />
+      <iframe
+        width='560'
+        height='315'
+        src='https://www.youtube.com/embed/HOJd1X2-45s'
+        title='YouTube video player'
+        frameBorder='0'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+        allowFullScreen
+      ></iframe>
       <hr />
       <h2>Links de documentacion</h2>
       <a href='https://jsdoc.app/index.html'>JSDoc: JSDoc:</a>
