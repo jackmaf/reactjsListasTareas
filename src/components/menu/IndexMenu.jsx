@@ -150,6 +150,16 @@ function IndexMenu() {
           </li>
           <li className='Menu__li'>
             <NavLink
+              to='/documentacion'
+              className={({ isActive }) =>
+                isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'
+              }
+            >
+              11. Documentación con jsdoc
+            </NavLink>
+          </li>
+          <li className='Menu__li'>
+            <NavLink
               to='/otros'
               className={({ isActive }) =>
                 isActive ? 'Menu__Link Menu__Link--active' : 'Menu__Link'

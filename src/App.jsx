@@ -25,6 +25,7 @@ import UseState from './components/use_state/UseState';
 import UseEffect from './components/use_effect/Index';
 import EstadosCompuestos from './components/estados_compuestos/Index';
 import EstadosCompuestosConUseReduce from './components/use_reduce/Index';
+import { Documentacion } from './components/documentacion/Index';
 
 // Carga de otros elementos (CSS, IMAGES)
 import './App.css';
@@ -79,6 +80,8 @@ function App() {
           element={<EstadosCompuestosConUseReduce />}
         />
         <Route path='/env-cmd' element={<VariablesEntorno />} />
+        <Route path='/documentacion' element={<Documentacion />} />
+
         <Route path='*' element={<NoFoundPage />} />
       </Routes>
     </BrowserRouter>
